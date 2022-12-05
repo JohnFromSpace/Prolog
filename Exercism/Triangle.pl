@@ -14,3 +14,8 @@ isosceles(_, Side, Side).
 triangle(Side, Side, Side, "equilateral") :-
 	Side > 0,
 	!.
+
+triangle(Side1, Side2, Side3, "isosceles") :-
+	valid(Side1, Side2, Side3),
+	isosceles(Side1, Side2, Side3),
+	!.
