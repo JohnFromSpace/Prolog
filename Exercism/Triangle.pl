@@ -19,3 +19,9 @@ triangle(Side1, Side2, Side3, "isosceles") :-
 	valid(Side1, Side2, Side3),
 	isosceles(Side1, Side2, Side3),
 	!.
+
+triangle(Side1, Side2, Side3, "scalene") :-
+	valid(Side1, Side2, Side3),
+	Side1 \= Side2,
+	Side1 \= Side3,
+	Side2 \= Side3.
