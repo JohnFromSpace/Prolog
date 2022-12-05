@@ -9,3 +9,8 @@ valid(Side1, Side2, Side3) :-
 isosceles(Side, Side, _).
 isosceles(Side, _, Side).
 isosceles(_, Side, Side).
+
+
+triangle(Side, Side, Side, "equilateral") :-
+	Side > 0,
+	!.
