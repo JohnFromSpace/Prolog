@@ -10,3 +10,5 @@ add((Real1, Imaginary1), (Real2, Imaginary2), (RReal, RImaginary)) :- RReal is R
 sub((Real1, Imaginary1), (Real2, Imaginary2), (RReal, RImaginary)) :- RReal is Real1 - Real2, RImaginary is Imaginary1 - Imaginary2.
 
 mul((Real1, Imaginary1), (Real2, Imaginary2), (RReal, RImaginary)) :- RReal is Real1 * Real2 - Imaginary1 * Imaginary2, RImaginary is Imaginary1 * Real2 + Imaginary2 * Real1.
+
+div((Real1, Imaginary1), (Real2, Imaginary2), (RReal, RImaginary)) :- Divided is Real2 * Real2 + Imaginary2 * Imaginary2, RReal is (Real1 * Real2 + Imaginary1 * Imaginary2)/Divided, RImaginary is (Imaginary1 * Real2 - Real1 * Imaginary2)/Divided.
