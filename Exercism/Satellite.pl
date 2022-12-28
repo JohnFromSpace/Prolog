@@ -1,1 +1,1 @@
-
+inorder(nil) --> [].
