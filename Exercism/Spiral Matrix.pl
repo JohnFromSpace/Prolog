@@ -1,1 +1,1 @@
-spiral(false).
+spiral(0, []) :- !.
