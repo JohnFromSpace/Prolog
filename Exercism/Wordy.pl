@@ -1,1 +1,1 @@
-
+wordy(Question, Answer) :- false.
