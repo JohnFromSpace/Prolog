@@ -1,1 +1,1 @@
-sum_of_multiples(Factors, Limit, Sum).
+sum_of_multiples(_, 1, 0).
