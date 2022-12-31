@@ -23,3 +23,4 @@ operand((Operand, _)) --> " ", operator(Op), {throw(error(syntax_error, _))}.
 
 operator("+") --> "plus", !.
 operator("-") --> "minus", !.
+operator("*") --> "multiplied by", !.
