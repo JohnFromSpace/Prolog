@@ -16,4 +16,4 @@ first_number(Number) --> " ", "is", " ", number(Number).
 first_number(_) --> " ", "is", {throw(error(syntax_error, _))}.
 
 operand_numbers([]) --> [].
-op_nums([H|T]) --> op_num(H), op_nums(T).
+operand_numbers([H|T]) --> operand_number(H), operand_numbers(T).
