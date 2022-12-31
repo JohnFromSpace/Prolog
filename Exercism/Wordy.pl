@@ -4,3 +4,4 @@ wordy(Question, Answer) :- string_codes(Question, Codes), phrase(parse(FirstNumb
 
 calculate(("+", A), B, C) :- C is B + A.
 calculate(("-", A), B, C) :- C is B - A.
+calculate(("*", A), B, C) :- C is B * A.
