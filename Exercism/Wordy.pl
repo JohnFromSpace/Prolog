@@ -27,3 +27,4 @@ operator("*") --> "multiplied by", !.
 operator("/") --> "divided by", !.
 
 operator(N) --> number(N), {throw(error(syntax_error, _))}.
+operator(_) --> {throw(error(unknown_operation_error, _))}.
