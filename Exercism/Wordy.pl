@@ -6,3 +6,5 @@ calculate(("+", A), B, C) :- C is B + A.
 calculate(("-", A), B, C) :- C is B - A.
 calculate(("*", A), B, C) :- C is B * A.
 calculate(("/", A), B, C) :- C is B / A.
+
+parse(FirstNumber, OpNums) --> question, first_num(FirstNumber), op_nums(OpNums), "?", !.
