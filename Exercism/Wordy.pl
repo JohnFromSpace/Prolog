@@ -10,3 +10,4 @@ calculate(("/", A), B, C) :- C is B / A.
 parse(FirstNumber, OperandNumbers) --> question, first_number(FirstNumber), operand_numbers(OperandNumbers), "?", !.
 
 question --> "What".
+question --> {throw(error(unknown_operation_error, _))}.
