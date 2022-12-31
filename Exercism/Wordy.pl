@@ -7,6 +7,6 @@ calculate(("-", A), B, C) :- C is B - A.
 calculate(("*", A), B, C) :- C is B * A.
 calculate(("/", A), B, C) :- C is B / A.
 
-parse(FirstNumber, OpNums) --> question, first_number(FirstNumber), op_nums(OperandNums), "?", !.
+parse(FirstNumber, OpNums) --> question, first_number(FirstNumber), operand_numbers(OperandNums), "?", !.
 
 question --> "What".
