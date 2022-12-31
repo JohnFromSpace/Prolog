@@ -12,4 +12,4 @@ parse(FirstNumber, OperandNumbers) --> question, first_number(FirstNumber), oper
 question --> "What".
 question --> {throw(error(unknown_operation_error, _))}.
 
-first_number(Number) --> " ", "is", " ", number(Num).
+first_number(Number) --> " ", "is", " ", number(Number).
