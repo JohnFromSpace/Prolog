@@ -25,3 +25,5 @@ operator("+") --> "plus", !.
 operator("-") --> "minus", !.
 operator("*") --> "multiplied by", !.
 operator("/") --> "divided by", !.
+
+operator(N) --> number(N), {throw(error(syntax_error, _))}.
