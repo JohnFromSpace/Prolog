@@ -20,3 +20,5 @@ operands([H|T]) --> operand(H), operands(T).
 
 operand((Operand, Number)) --> " ", operator(Operator), " ", number(Number).
 operand((Operand, _)) --> " ", operator(Op), {throw(error(syntax_error, _))}.
+
+operator("+") --> "plus", !.
