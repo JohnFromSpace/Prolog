@@ -1,3 +1,3 @@
 :- use_module(library(dcg/basics)).
 
-wordy(Question, Answer) :- false.
+wordy(Question, Answer) :- string_codes(Question, Codes), phrase(parse(FirstNumber, OpNums), Codes, []), foldl(calculate, OpNums, FirstNumber, Answer).
