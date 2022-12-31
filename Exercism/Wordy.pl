@@ -13,3 +13,4 @@ question --> "What".
 question --> {throw(error(unknown_operation_error, _))}.
 
 first_number(Number) --> " ", "is", " ", number(Number).
+first_number(_) --> " ", "is", {throw(error(syntax_error, _))}.
