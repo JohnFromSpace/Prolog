@@ -13,3 +13,18 @@ sum_list_acc([Head|Tail], Acc, Sum) :-
 
 ?- sum_list([1, 2, 3, 4, 5], Sum).
 % End
+
+% Find the length of a list using an accumulator in Prolog:
+% Length of a list using an accumulator
+list_length(List, Length) :- list_length_acc(List, 0, Length).
+
+% Base case: the length of an empty list is the accumulator
+list_length_acc([], Acc, Acc).
+
+% Recursive case: accumulate the length during the traversal
+list_length_acc([_|Tail], Acc, Length) :-
+    NewAcc is Acc + 1,
+    list_length_acc(Tail, NewAcc, Length).
+
+?- list_length([1, 2, 3, 4, 5], Length).
+% End
