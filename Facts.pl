@@ -12,8 +12,8 @@ gives(Alexander, money, Peter). % Alexander gives money to Peter.
 owns(Maria, dog). % Maria owns a dog.
 has(Ivan, house, city). % Ivan has a house in the city.
 
-% In SWI-Prolog we can use variables like the following:
-?- good(X).
+% We ask if something is true by using ?- in front of a fact:
+?- good(X). % Is it true that "X" who is "Bob" is "good"?
 X = Bob.
 
 ?- owns(X, Y).
