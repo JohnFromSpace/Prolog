@@ -18,3 +18,10 @@ classify_number(X, negative) :- X < 0.
 
 ?- classify_number(-3, Class).
 % Output: Class = negative
+% End
+
+% The cut (!) and the fail/0 predicate are often used together to control backtracking and terminate search branches.
+% The fail/0 predicate awlays fails, and when combined with the cut, it can be used to prune certain paths. 
+
+% Here's an example to illustrate the use of cut and fail:
+
