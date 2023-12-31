@@ -31,4 +31,6 @@ drinks(John, wine). % John drinks wine.
 ?- drinks(Bob, X), drinks(John, X).
 X = beer,
 X = wine. 
-% 
+% This returns:
+% "Bob drinks beer." which is true.
+% "John drinks wine." which is true. 
