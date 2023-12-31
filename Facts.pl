@@ -8,3 +8,4 @@
 
 good(Bob). % translates to Bob is good.
 male(Robert). % Robert is male.
+gives(Alexander, money, Peter). % Alexander gives money to Peter.
