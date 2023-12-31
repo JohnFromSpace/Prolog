@@ -19,3 +19,8 @@ X = Bob.
 ?- owns(X, Y).
 X = Maria.
 Y = dog.
+
+% Using semicolons in Prolog is a bit tricky. 
+% Let's use the following two facts:
+
+drinks(Bob, beer). % Bob drinks beer.
