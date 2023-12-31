@@ -115,3 +115,33 @@ concatenate_lists([Head|Tail1], List2, [Head|ResultTail]) :-
 ?- concatenate_lists([1, 2, 3], [4, 5, 6], Result).
 % End of code
 
+% Binary search in a list 
+% Binary search on a sorted list
+binary_search(List, Element) :-
+    length(List, Len),
+    binary_search(List, 0, Len, Element).
+
+% Base case: element is at the middle position
+binary_search(List, Low, High, Element) :-
+    Middle is (Low + High) // 2,
+    nth0(Middle, List, MiddleElement),
+    MiddleElement =:= Element.
+
+% Recursive case: element is in the left half
+binary_search(List, Low, High, Element) :-
+    Middle is (Low + High) // 2,
+    nth0(Middle, List, MiddleElement),
+    MiddleElement > Element,
+    NewHigh is Middle,
+    binary_search(List, Low, NewHigh, Element).
+
+% Recursive case: element is in the right half
+binary_search(List, Low, High, Element) :-
+    Middle is (Low + High) // 2,
+    nth0(Middle, List, MiddleElement),
+    MiddleElement < Element,
+    NewLow is Middle + 1,
+    binary_search(List, NewLow, High, Element).
+
+?- binary_search([1, 2, 3, 4, 5, 6, 7, 8, 9], 5).
+% End of code
