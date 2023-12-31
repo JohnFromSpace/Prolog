@@ -30,3 +30,8 @@ likes(Einstein, X) :- likes(X, physics).
 
 % Ranges in rules
 lived(Einstein, 1879, 1955). % Einstein lived from year 1879 to 1955.
+lived(Tesla, 1856, 1943). 
+
+human(X, Y) :- lived(X, A, B),
+               Y >= A, 
+               Y <= B.
