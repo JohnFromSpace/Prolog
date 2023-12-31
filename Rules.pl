@@ -27,3 +27,6 @@ likes(Einstein, X) :- likes(X, physics).
 ?- likes(Einstein, Tesla). % F
 ?- likes(Einstein, Planck). % T
 ?- likes(Einstein, Heisenberg). % T
+
+% Ranges in rules
+lived(Einstein, 1879, 1955). % Einstein lived from year 1879 to 1955.
