@@ -29,7 +29,7 @@ drinks(John, wine). % John drinks wine.
 % In SWI-Prolog: 
 
 ?- drinks(Bob, X), drinks(John, X).
-X = beer,
+X = beer;
 X = wine. 
 % This returns:
 % "Bob drinks beer." which is true.
