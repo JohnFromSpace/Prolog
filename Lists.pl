@@ -20,3 +20,17 @@ max_element(X, Y, Y) :- X =< Y.   % If X <= Y, then Y is the max element
 
 ?- max_element(5, 2, Ans). 
 
+% List implementation
+% Base case: An empty list
+my_list([]).
+
+% Recursive case: A list with at least one element
+my_list([Head | Tail]) :-
+    % Head is the first element of the list
+    % Tail is the rest of the list
+    write('Head: '), write(Head), nl,
+    write('Tail: '), write(Tail), nl.
+
+% Example usage:
+% This will print "Head: 1" and "Tail: [2,3]"
+?- my_list([1, 2, 3]).
