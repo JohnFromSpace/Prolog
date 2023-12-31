@@ -16,6 +16,7 @@
 % In Prolog, the Cut operator, denoted by ! is a goal that always succeeds but cannot be backtracked. 
 % For example, consider the following program to find the max element between 2 numbers:
 max_element(X, Y, X) :- X > Y.    % If X > Y, then X is the max element
-max_element(X, Y, Y) :- X =< Y.    % If X <= Y, then Y is the max element
+max_element(X, Y, Y) :- X =< Y.   % If X <= Y, then Y is the max element
 
-?- max_element(5, 2, Ans).
+?- max_element(5, 2, Ans). 
+
