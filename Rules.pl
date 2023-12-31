@@ -18,4 +18,12 @@ likes(Tesla, engineering).
 likes(Planck, physics).
 likes(Heisenberg, physics).
 
+% Create the rule:
 likes(Einstein, X) :- likes(X, physics).
+
+% Let's check if the following queries are true:
+?- likes(Einstein, Bohr). % T
+?- likes (Einstein, Curie). % F
+?- likes(Einstein, Tesla). % F
+?- likes(Einstein, Planck). % T
+?- likes(Einstein, Heisenberg). % T
