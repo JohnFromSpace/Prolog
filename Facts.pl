@@ -10,3 +10,4 @@ good(Bob). % translates to Bob is good.
 male(Robert). % Robert is male.
 gives(Alexander, money, Peter). % Alexander gives money to Peter.
 owns(Maria, dog). % Maria owns a dog.
+has(Ivan, house, city). % Ivan has a house in the city.
