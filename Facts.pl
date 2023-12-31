@@ -1,4 +1,4 @@
-% Facts in Prolog are clauses with a head with no variables and no body
+% Facts in Prolog are clauses with a head with no variables and no body.
 % They are mainly used as declarative statements about a problem domain.
 % They are expressed as:
 % R(X,Y,...). 
