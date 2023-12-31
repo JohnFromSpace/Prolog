@@ -34,3 +34,32 @@ my_list([Head | Tail]) :-
 % Example usage:
 % This will print "Head: 1" and "Tail: [2,3]"
 ?- my_list([1, 2, 3]).
+% End of Implementation
+
+% Find the length of a list
+% Base case: an empty list has length 0
+length_of_list([], 0).
+
+% Recursive case: the length is 1 plus the length of the tail of the list
+length_of_list([_|Tail], Length) :-
+    length_of_list(Tail, TailLength),
+    Length is TailLength + 1.
+
+?- length_of_list([1, 2, 3, 4, 5], Length).
+% End of code
+
+%  Find and remove a specified element in a linked list in Prolog,
+% Base case: removing an element from an empty list results in an empty list
+remove_element(_, [], []).
+
+% If the element to be removed is the head of the list, skip it
+remove_element(Element, [Element|Tail], NewList) :-
+    remove_element(Element, Tail, NewList).
+
+% If the element to be removed is not the head, keep the head and recurse on the tail
+remove_element(Element, [X|Tail], [X|NewList]) :-
+    X \= Element,
+    remove_element(Element, Tail, NewList).
+
+?- remove_element(3, [1, 2, 3, 4, 5], NewList).
+% End of code
