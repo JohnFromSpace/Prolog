@@ -105,3 +105,13 @@ dll_backward([Head|Tail], Next) :-
 ?- dll_backward(NewList2, null).
 ?- dll_remove(1, NewList2, UpdatedList).
 % End of Implementation
+
+% Concatinate two linked lists 
+% Rule to concatenate two lists
+concatenate_lists([], List, List).
+concatenate_lists([Head|Tail1], List2, [Head|ResultTail]) :-
+    concatenate_lists(Tail1, List2, ResultTail).
+
+?- concatenate_lists([1, 2, 3], [4, 5, 6], Result).
+% End of code
+
