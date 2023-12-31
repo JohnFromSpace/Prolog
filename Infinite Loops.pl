@@ -6,3 +6,11 @@ Child(A, B) :- Parent(B, A).
 ?- Parent(Ivan, Bob). % Infinite loop
 ?- Child(Bob, Ivan). % Infinite loop
 
+% Case 2):
+Person(X) :- Person(Y), Relate(X, Y). 
+
+?- Person(Ivan). % Infinite loop
+
+% To evade an infinite loop a fact will be needed:
+Person(John). % T
+?- Person(John). % t
