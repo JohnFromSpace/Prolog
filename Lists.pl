@@ -145,3 +145,31 @@ binary_search(List, Low, High, Element) :-
 
 ?- binary_search([1, 2, 3, 4, 5, 6, 7, 8, 9], 5).
 % End of code
+
+% Sort a list 
+% Example usage:
+% ?- sort_list([3, 1, 4, 1, 5, 9, 2, 6, 5], SortedList).
+
+sort_list(List, SortedList) :-
+    sort(List, SortedList).
+
+% Quick sort
+% Quicksort implementation
+quicksort([], []).
+quicksort([Pivot|Rest], Sorted) :-
+    partition(Pivot, Rest, Less, Greater),
+    quicksort(Less, SortedLess),
+    quicksort(Greater, SortedGreater),
+    append(SortedLess, [Pivot|SortedGreater], Sorted).
+
+% Partition the list into elements less than and greater than the pivot
+partition(_, [], [], []).
+partition(Pivot, [X|Xs], [X|Ls], Gs) :-
+    X =< Pivot,
+    partition(Pivot, Xs, Ls, Gs).
+partition(Pivot, [X|Xs], Ls, [X|Gs]) :-
+    X > Pivot,
+    partition(Pivot, Xs, Ls, Gs).
+
+?- quicksort([3, 1, 4, 1, 5, 9, 2, 6, 5], SortedList).
+% End of code
