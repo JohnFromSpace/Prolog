@@ -32,5 +32,26 @@ drinks(John, wine). % John drinks wine.
 X = beer;
 X = wine. 
 % This returns:
-% "Bob drinks beer." which is true.
-% "John drinks wine." which is true. 
+% "Bob drinks beer." which is true. AND "John drinks beer." which is not true.
+% "Bob drinks wine." which is true. AND "John drinks wine." which is true.
+% So the compiler returns both results with their respective values of X for each query. 
+% In other words, the first time "X" takes the value of "beer", and the second time "X" takes the
+% value of "wine".
+
+%We can represent the query as:
+/*
+                                                                            drinks(Bob, beer). -> T
+                                                                          /                          \
+                                   drinks(Bob, beer), drinks(John, beer).                              AND -> F \ 
+                                  /                                       \ drinks(John, beer). -> F /           \
+?- drinks(Bob, X), drinks(John, X).                                                                               \
+X = beer.                                                                                                           AND -> F
+X = wine.                                                                   drinks(Bob, wine). -> F               /  
+                                  \                                       /                         \            /
+                                   drinks(Bob, wine), drinks(John, wine).                              AND -> F/
+                                                                          \                         /
+                                                                            drinks(John, wine). -> T 
+*/
+
+% The semicolon ";" represents the OR operator in Prolog. 
+% The colon "," represents the AND operator in Prolog.
