@@ -185,3 +185,21 @@ sum_lists([X1|Rest1], [X2|Rest2], [Sum|RestSum]) :-
 
 ?- sum_lists([1, 2, 3], [4, 5, 6], SumList).
 % End of code
+
+% Compare which list has biggest element
+% Base case: an empty list has no maximum element
+max_element([], -1).
+
+% Recursive case: find the maximum element in the list
+max_element([X|Xs], Max) :-
+    max_element(Xs, RestMax),
+    Max is max(X, RestMax).
+
+% Compare the maximum elements of two lists
+compare_lists(List1, List2, Result) :-
+    max_element(List1, Max1),
+    max_element(List2, Max2),
+    compare(Result, Max1, Max2).
+
+?- compare_lists([1, 2, 3], [4, 5, 6], Result).
+% End of code
