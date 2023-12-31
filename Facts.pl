@@ -43,8 +43,8 @@ X = wine.
                                                                             drinks(Bob, beer). -> T
                                                                           /                          \
                                    drinks(Bob, beer), drinks(John, beer).                              AND -> F \ 
-                                  /                                       \ drinks(John, beer). -> F /           \
-?- drinks(Bob, X), drinks(John, X).                                                                               \
+                                  /                                       \                          /
+?- drinks(Bob, X), drinks(John, X).                                         drinks(John, beer). -> F                                       \
 X = beer.                                                                                                           AND -> F
 X = wine.                                                                   drinks(Bob, wine). -> F               /  
                                   \                                       /                         \            /
