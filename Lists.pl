@@ -75,3 +75,33 @@ sum_of_elements([Head|Tail], Sum) :-
 
 ?- sum_of_elements([1, 2, 3, 4, 5], Sum).
 % End of code
+
+% Doubly linked list implementation
+% Fact representing an empty doubly linked list
+dll_empty([]).
+
+% Rule to add a new element to the doubly linked list
+dll_add(Element, List, [Element|List]).
+
+% Rule to remove an element from the doubly linked list
+dll_remove(Element, [Element|Tail], Tail).
+dll_remove(Element, [Head|Tail], [Head|NewTail]) :-
+    dll_remove(Element, Tail, NewTail).
+
+% Rule to traverse the doubly linked list forward
+dll_forward([], _).
+dll_forward([Head|Tail], Prev) :-
+    write(Prev), write(' <-> '), write(Head), nl,
+    dll_forward(Tail, Head).
+
+% Rule to traverse the doubly linked list backward
+dll_backward([], _).
+dll_backward([Head|Tail], Next) :-
+    write(Next), write(' <-> '), write(Head), nl,
+    dll_backward(Tail, Head).
+
+?- dll_empty(List), dll_add(1, List, NewList), dll_add(2, NewList, NewList2).
+?- dll_forward(NewList2, null).
+?- dll_backward(NewList2, null).
+?- dll_remove(1, NewList2, UpdatedList).
+% End of Implementation
