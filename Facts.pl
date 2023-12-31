@@ -7,3 +7,4 @@
 % In other words, the clause R(X,Y,...). returns true.  
 
 good(Bob). % translates to Bob is good.
+male(Robert). % Robert is male.
