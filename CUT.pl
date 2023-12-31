@@ -24,4 +24,15 @@ classify_number(X, negative) :- X < 0.
 % The fail/0 predicate awlays fails, and when combined with the cut, it can be used to prune certain paths. 
 
 % Here's an example to illustrate the use of cut and fail:
+/* Define a predicate to find the first positive element in a list */
+first_positive([X|_], X) :- X > 0, !.
+first_positive([_|Tail], Result) :- first_positive(Tail, Result).
+first_positive([], no_positive).
 
+/* Example usage */
+?- first_positive([1, -2, 3, -4, 5], Result).
+% Output: Result = 1
+
+?- first_positive([-1, -2, -3], Result).
+% Output: Result = no_positive
+% End
