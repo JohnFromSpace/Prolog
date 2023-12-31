@@ -23,4 +23,5 @@ Y = dog.
 % Using semicolons in Prolog is a bit tricky. 
 % Let's use the following two facts:
 
-drinks(Bob, beer). % Bob drinks beer.
+drinks(Bob, X). % Bob drinks X.
+drinks(John, X). % John drinks X.
