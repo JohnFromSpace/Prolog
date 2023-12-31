@@ -5,3 +5,5 @@
 % where R is a relation between some objects X, Y,... that is true.
 % It can also be considered as a definition. 
 % In other words, the clause R(X,Y,...). returns true.  
+
+good(Bob). % translates to Bob is good.
