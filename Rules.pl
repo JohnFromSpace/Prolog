@@ -17,3 +17,5 @@ likes(Curie, chemistry).
 likes(Tesla, engineering).
 likes(Planck, physics).
 likes(Heisenberg, physics).
+
+likes(Einstein, X) :- likes(X, physics).
