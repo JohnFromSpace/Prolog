@@ -63,3 +63,15 @@ remove_element(Element, [X|Tail], [X|NewList]) :-
 
 ?- remove_element(3, [1, 2, 3, 4, 5], NewList).
 % End of code
+
+% Find sum of elements in a list 
+% Base case: sum of elements in an empty list is 0
+sum_of_elements([], 0).
+
+% Recursive case: sum is the head of the list plus the sum of the tail
+sum_of_elements([Head|Tail], Sum) :-
+    sum_of_elements(Tail, TailSum),
+    Sum is Head + TailSum.
+
+?- sum_of_elements([1, 2, 3, 4, 5], Sum).
+% End of code
