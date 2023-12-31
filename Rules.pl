@@ -35,3 +35,18 @@ lived(Tesla, 1856, 1943).
 human(X, Y) :- lived(X, A, B),
                Y >= A, 
                Y <= B.
+
+% Density of a country in billions
+population(China, 2.0).
+population(India, 2.2).
+population(USA, 0.3).
+
+% Area of a country 
+area(China, 300).
+area(India, 250).
+area(USA, 400).
+
+% Create a density function
+density(X, Y) :- population(X, P),
+                  area(X, A),
+                  Y is P/A.
