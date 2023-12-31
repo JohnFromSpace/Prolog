@@ -12,4 +12,6 @@ gives(Alexander, money, Peter). % Alexander gives money to Peter.
 owns(Maria, dog). % Maria owns a dog.
 has(Ivan, house, city). % Ivan has a house in the city.
 
-% We can use variables like the following:
+% In SWI-Prolog we can use variables like the following:
+?- good(X).
+X = Bob.
