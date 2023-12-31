@@ -15,3 +15,7 @@ has(Ivan, house, city). % Ivan has a house in the city.
 % In SWI-Prolog we can use variables like the following:
 ?- good(X).
 X = Bob.
+
+?- owns(X, Y).
+X = Maria.
+Y = dog.
