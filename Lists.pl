@@ -12,3 +12,6 @@
 % In prolog, lists have got only one operator, called pipe, denoted by |. 
 % This operator is used to append an element at the beginning of a list. The syntax of the pipe operator is as follows:
 [a | L]
+
+% In Prolog, the Cut operator, denoted by ! is a goal that always succeeds but cannot be backtracked. 
+% For example, consider the following program to find the max element between 2 numbers:
