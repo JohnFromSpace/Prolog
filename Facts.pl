@@ -42,13 +42,13 @@ X = wine.
 /*
                                                                             drinks(Bob, beer). -> T
                                                                           /                          \
-                                   drinks(Bob, beer), drinks(John, beer).                              AND -> F \ 
-                                  /                                       \                          /
-?- drinks(Bob, X), drinks(John, X).                                         drinks(John, beer). -> F                                       \
-X = beer.                                                                                                           AND -> F
-X = wine.                                                                   drinks(Bob, wine). -> F               /  
-                                  \                                       /                         \            /
-                                   drinks(Bob, wine), drinks(John, wine).                              AND -> F/
+                                   drinks(Bob, beer), drinks(John, beer).                              AND -> F  
+                                  /                                       \                          /         \   
+?- drinks(Bob, X), drinks(John, X).                                         drinks(John, beer). -> F            \  
+X = beer.                                                                                                         AND -> F
+X = wine.                                                                   drinks(Bob, wine). -> F             /    
+                                  \                                       /                         \          /  
+                                   drinks(Bob, wine), drinks(John, wine).                              AND -> F
                                                                           \                         /
                                                                             drinks(John, wine). -> T 
 */
