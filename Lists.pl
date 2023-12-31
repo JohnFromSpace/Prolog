@@ -173,3 +173,15 @@ partition(Pivot, [X|Xs], Ls, [X|Gs]) :-
 
 ?- quicksort([3, 1, 4, 1, 5, 9, 2, 6, 5], SortedList).
 % End of code
+
+% Sum respective elemnts in two lists 
+% Base case: sum of empty lists is an empty list
+sum_lists([], [], []).
+
+% Recursive case: sum respective elements and construct a new list
+sum_lists([X1|Rest1], [X2|Rest2], [Sum|RestSum]) :-
+    Sum is X1 + X2,
+    sum_lists(Rest1, Rest2, RestSum).
+
+?- sum_lists([1, 2, 3], [4, 5, 6], SumList).
+% End of code
