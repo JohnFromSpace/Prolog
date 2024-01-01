@@ -36,3 +36,23 @@ is_string_list(Term) :-
 
 ?- is_string_list(['P', 'r', 'o', 'l', 'o', 'g', ' ', 'i', 's', ' ', 'f', 'u', 'n', '!']).
 % true
+
+% Examples of string representation using the built-in string type
+string('Hello World').
+string('Prolog is fun!').
+
+% Predicate to check if a term is a string
+is_string(Term) :-
+    string(Term),
+    string_length(Term, Len),
+    Len > 0.
+
+% Example usage
+?- is_string('Hello World').
+% true
+
+?- is_string('123').
+% false (contains numeric characters)
+
+?- is_string('Prolog').
+% true
